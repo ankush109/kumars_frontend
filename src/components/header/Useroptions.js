@@ -60,7 +60,7 @@ const Useroptions = ({ user }) => {
     navigate("/");
   }
   function logoutuser() {
-    Cookies.remove('user');
+    localStorage.removeItem('token');
     dispatch(logout());
     alert.success("logout successfully");
   }
