@@ -18,7 +18,7 @@ function Paymentop() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
   const getToken = async () => {
     try {
-      const { data } = await axios.get("/api/v1/braintree/token");
+      const { data } = await axios.get("https://kubackend.onrender.com/api/v1/braintree/token");
       console.log(data);
       setClientToken(data?.clientToken);
     } catch (error) {
@@ -35,7 +35,7 @@ function Paymentop() {
       setLoading(true);
       const { nonce } = await instance.requestPaymentMethod();
       console.log(cartitems, "cart");
-      await axios.post("/api/v1/braintree/payment", {
+      await axios.post("https://kubackend.onrender.com/api/v1/braintree/payment", {
         nonce,
         cartitems,
       });
