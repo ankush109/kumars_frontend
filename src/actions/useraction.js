@@ -26,7 +26,7 @@ export const login = (email,password)=>async(dispatch)=>{
    
         )
         console.log(data,"data")
-    Cookies.set("token",data.token)
+  //  Cookies.set("token",data.token)
     dispatch({type:LOGIN_SUCCESS,payload:data.user}
         )
     }catch(error){
