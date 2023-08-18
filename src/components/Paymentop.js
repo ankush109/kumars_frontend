@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import "./p.css";
 import CheckoutSteps from "./Checkoutsteps";
+import { AuthAPI } from "../actions/auth";
 function Paymentop() {
   const alert = useAlert();
 
@@ -18,7 +19,7 @@ function Paymentop() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
   const getToken = async () => {
     try {
-      const { data } = await axios.get("https://kubackend.onrender.com/api/v1/braintree/token");
+      const { data } =await AuthAPI().get("https://kubackend.onrender.com/api/v1/braintree/token");
       console.log(data);
       setClientToken(data?.clientToken);
     } catch (error) {
@@ -35,7 +36,7 @@ function Paymentop() {
       setLoading(true);
       const { nonce } = await instance.requestPaymentMethod();
       console.log(cartitems, "cart");
-      await axios.post("https://kubackend.onrender.com/api/v1/braintree/payment", {
+      await AuthAPI().post("https://kubackend.onrender.com/api/v1/braintree/payment", {
         nonce,
         cartitems,
       });
