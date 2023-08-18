@@ -17,12 +17,14 @@ import {
     } from "../constants/userconstant"
 import axios from "axios" 
 import Cookies from 'js-cookie';
+import { AuthAPI } from "./auth";
 //login
+
 export const login = (email,password)=>async(dispatch)=>{
     try{
         dispatch({type:LOGIN_REQUEST})
         const config ={headers:{"Content-Type":"application/json"}}
-        const {data} =await axios.post(`https://kubackend.onrender.com/api/v1/login`,{email,password},config
+        const {data} =await AuthAPI().post(`https://kubackend.onrender.com/api/v1/login`,{email,password},config
    
         )
              Cookies.set("token",data.token)
@@ -39,7 +41,7 @@ export const loaduser = ()=>async(dispatch)=>{
     try{
         dispatch({type:LOADUSER_REQUEST})
        
-        const {data} =await axios.get(`https://kubackend.onrender.com/api/v1/me`)
+        const {data} =await AuthAPI().get(`https://kubackend.onrender.com/api/v1/me`)
    
 
     
@@ -55,7 +57,7 @@ dispatch({type:LOADUSER_FAIL,payload:error.response.data.message})
 export const  logout= ()=>async(dispatch)=>{
     try{
      
-       await axios.get(`https://kubackend.onrender.com/api/v1/logout`)
+        await AuthAPI().get(`https://kubackend.onrender.com/api/v1/logout`)
     dispatch({type:LOGOUT_SUCCESS}
         )
     }catch(error){
@@ -68,7 +70,7 @@ dispatch({type:LOGOUT_FAIL,payload:error.response.data.message})
 export const  getallusers= ()=>async(dispatch)=>{
     try{
     dispatch({type:ALL_USERS_REQUEST})
-     const {data} =  await axios.get(`https://kubackend.onrender.com/api/v1/admin/users`)
+     const {data} =  await AuthAPI().get(`https://kubackend.onrender.com/api/v1/admin/users`)
     dispatch({type:ALL_USERS_SUCCESS,payload:data.user}
         )
     }catch(error){
@@ -80,7 +82,7 @@ dispatch({type:ALL_USERS_FAIL,payload:error.response.data.message})
 export const  getuserdetails= (id)=>async(dispatch)=>{
     try{
     dispatch({type:USER_DETAILS_REQUEST})
-     const {data} =  await axios.get(`https://kubackend.onrender.com/api/v1/admin/users${id}`)
+     const {data} =  await AuthAPI().get(`https://kubackend.onrender.com/api/v1/admin/users${id}`)
     dispatch({type:USER_DETAILS_SUCCESS,payload:data.user}
         )
     }catch(error){
