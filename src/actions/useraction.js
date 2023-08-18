@@ -25,6 +25,7 @@ export const login = (email,password)=>async(dispatch)=>{
         const {data} =await axios.post(`https://kubackend.onrender.com/api/v1/login`,{email,password},config
    
         )
+             Cookies.set("token",data.token)
         console.log(data,"data")
   //  Cookies.set("token",data.token)
     dispatch({type:LOGIN_SUCCESS,payload:data.user}
@@ -39,8 +40,8 @@ export const loaduser = ()=>async(dispatch)=>{
         dispatch({type:LOADUSER_REQUEST})
        
         const {data} =await axios.get(`https://kubackend.onrender.com/api/v1/me`)
-        
-  console.log(data,"data");
+   
+
     
     dispatch({type:LOADUSER_SUCCESS,payload:data.user}
         )
