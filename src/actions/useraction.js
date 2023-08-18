@@ -27,7 +27,7 @@ export const login = (email,password)=>async(dispatch)=>{
         const {data} =await AuthAPI().post(`https://kubackend.onrender.com/api/v1/login`,{email,password},config
    
         )
-             Cookies.set("token",data.token)
+             localStorage.setItem("token",data.token)
         console.log(data,"data")
   //  Cookies.set("token",data.token)
     dispatch({type:LOGIN_SUCCESS,payload:data.user}
