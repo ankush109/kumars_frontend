@@ -1,0 +1,79 @@
+/* myorder.css */
+/* Add your existing styles here */
+
+/* Additional styles for MyOrders component */
+.my-orders-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.order-details {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #eee;
+}
+
+.order-header h1 {
+  font-size: 24px;
+}
+
+.order-item {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.order-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+
+}
+.imgr > img{
+  width: 200px;
+  height: 200px;
+  margin-right: 10px;
+}
+.order-item img {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 10px;
+}
+
+.order-item p {
+  margin: 5px 0;
+}
+
+/* p.css */
+/* Add your existing styles here */
+
+/* Additional styles for Order items */
+.order-item {
+  display: flex;
+  align-items: center;
+}
+
+.order-item-description {
+  flex-grow: 1;
+}
+.page{
+ padding: 30px 130px;
+
+}

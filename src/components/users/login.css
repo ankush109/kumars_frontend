@@ -1,0 +1,74 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  height: 90%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  
+}
+.h{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.login {
+  background-color: rgb(247, 247, 247);
+  width: 40%;
+  
+
+}
+
+.header1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 16%;
+  background-color: rgb(247, 247, 247);
+  padding-top: 140px;
+}
+
+.header1 >  h1 {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(26, 26, 26);
+  text-indent: 1;
+  padding-bottom: 150px;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 30%;
+}
+
+.img {
+  background-color: bisque;
+  width: 60%;
+
+}
+
+.header2 > h2{
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(138, 138, 138);
+  text-indent: 1;
+  text-align: center;
+  padding-left: 20px;
+}
+.img > img {
+  width: 100%;
+}
+
+/* Add more styles for other classes as needed */
+
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

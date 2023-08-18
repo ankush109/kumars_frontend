@@ -1,0 +1,145 @@
+.banner {
+
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+.s{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(51, 48, 100);
+  font-weight: bold;
+  padding:10px ;
+  margin-top: 50px;
+
+}
+.banner2{
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+.banner >img{
+  padding-top: 10px;
+  width:74%;
+  margin-top: 40px;
+  height: 100%;
+
+}
+.w {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: rgb(51, 48, 100);
+  font-weight: bold;
+}
+input {
+  background-color: transparent;
+  border: 0px none;
+  height: 20px;
+  width: 160px;
+  color: black;
+  padding-left: 35px;
+}
+.banner > h1 {
+  padding-left: 30px;
+  width: 10vw;
+  font-size: 70px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.banner > p {
+  font: 300 1.4vmax "Lucide Sans";
+  padding-left: 80px;
+  font-size: 30px;
+}
+.banner > a > button {
+  margin-top: 30px;
+  margin-bottom: 150px;
+  margin-left: 30vmax;
+  cursor: pointer;
+  background-color: rgb(109, 103, 199);
+  border: 1px solid rgb(255, 220, 145);
+  border-radius: 0;
+  padding: 1vmax;
+  transition: all 0.5;
+  width: 14vmax;
+  border-radius: 50px;
+  font: 600 1.5vmax "Roboto";
+  color: white;
+}
+.banner > a > button:hover {
+  background-color: rgb(72, 67, 138);
+  color: white;
+}
+
+.homeheading {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 2vmax;
+  border-bottom: 1px solid rgba(220, 97, 97, 0.5);
+  width: 20vmax;
+  padding: 1vmax;
+  margin: 5vmax auto;
+}
+.container {
+  display: flex;
+  margin: 2vmax auto;
+  width: 100vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.productcard > img {
+  width: 19vmax;
+  height: 15vmax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productcard > div {
+  margin: 0.5vmax;
+  display: flex;
+  justify-content: flex-start;
+}
+.productcard > div > span {
+  margin: 0.5vmax;
+  font: 300 0.7vmax "Roboto";
+}
+.productcard > p {
+  font-family: "Roboto";
+  font-size: 1.2vmax;
+  margin: 1vmax 0.5vmax;
+
+  margin-bottom: 0;
+}
+.productcard > span {
+  margin: 0.5vmax 0.5vmax;
+  color: red;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1vmax;
+}
+.productcard:hover {
+  box-shadow: 0 0 5px rgb(168, 168, 168);
+  transform: translateY(-1vmax);
+}
+@media screen and (max-width: 700px) {
+  .banner {
+    background-image: url(https://www-cdn.bigcommerce.com/assets/Article-Header_Ecommerce_Website.jpg);
+    height: 40vh;
+    display: flex;
+  }
+  .productcard {
+    width: 40vw;
+    margin: 2vmax;
+  }
+}
