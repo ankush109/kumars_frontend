@@ -113,7 +113,7 @@ export const updateprofile = (userData)=>async(dispatch)=>{
         dispatch({type:UPDATEUSER_REQUEST})
         const config ={headers:{"Content-Type":"multipart/form-data"}}
         
-  const {data} =await axios.put(`https://kubackend.onrender.com/api/v1/me/update`,userData,config);
+  const {data} =await AuthAPI().put(`https://kubackend.onrender.com/api/v1/me/update`,userData,config);
   dispatch({type:UPDATEUSER_SUCCESS,payload:data.success})
  
     }catch(error){
@@ -126,7 +126,7 @@ export const updateuser=(id,userdata)=>async(dispatch)=>{
     try{
         dispatch({type:UPDATE_USER_REQUEST})
         const config ={headers: {"Content-Type" :"application/json"}}
-        const {data} =await axios.put(`https://kubackend.onrender.com/api/v1/admin/users/${id}`,config,userdata)
+        const {data} =await AuthAPI().put(`https://kubackend.onrender.com/api/v1/admin/users/${id}`,config,userdata)
         dispatch({type:UPDATE_USER_SUCCESS,payload:data.success})
 
 

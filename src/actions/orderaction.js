@@ -21,13 +21,14 @@ import {
 } from "../constants/orderconstant";
 
 import axios from "axios";
+import { AuthAPI } from "./auth";
 
 //create order
 export const createorder = (order) => async (dispatch, getstate) => {
   try {
     dispatch({ type: CREATE_ORDER_REQUEST });
 
-    const { data } = await axios.post("https://kubackend.onrender.com/api/v1/order/new", order);
+    const { data } =await AuthAPI().post("https://kubackend.onrender.com/api/v1/order/new", order);
     dispatch({ type: CREATE_ORDER_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
@@ -41,7 +42,7 @@ export const myorder = () => async (dispatch) => {
   try {
     dispatch({ type: MY_ORDERS_REQUEST });
 
-    const { data } = await axios.get("https://kubackend.onrender.com/api/v1/orders/me");
+    const { data } = await AuthAPI().get("https://kubackend.onrender.com/api/v1/orders/me");
     dispatch({ type: MY_ORDER_SUCCESS, payload: data.orders });
   } catch (error) {
     console.log(error);
@@ -56,7 +57,7 @@ export const getorderdetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: ORDER_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`https://kubackend.onrender.com/api/v1/order/${id}`);
+    const { data } =await AuthAPI().get(`https://kubackend.onrender.com/api/v1/order/${id}`);
     dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data.order });
   } catch (error) {
     dispatch({

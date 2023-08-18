@@ -32,6 +32,7 @@ import {
   ADMIN_PRODUCT_REQUEST,
   ADMIN_PRODUCT_SUCCESS,
 } from "../constants/productconstant";
+import { AuthAPI } from "./auth";
 export const getproduct = () => async (dispatch) => {
   try {
     dispatch({
@@ -122,7 +123,7 @@ export const newreview = (reviewdata) => async (dispatch) => {
     const config = {
       headers: { "Content-Type": "application/json" },
     };
-    const { data } = await axios.put(`https://kubackend.onrender.com/api/v1/review`, reviewdata, config);
+    const { data } = await AuthAPI().put(`https://kubackend.onrender.com/api/v1/review`, reviewdata, config);
     dispatch({
       type: NEW_REVIEW_SUCCESS,
       payload: data.success,

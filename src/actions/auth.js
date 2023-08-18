@@ -8,7 +8,7 @@ export const AuthAPI = () => {
       });
     } else {
       return axios.create({
-        baseURL: `https://kubackend.onrender.com/api/v1/`,
+        baseURL: `https://kubackend.onrender.com/api/v1`,
         headers: { authorization: `Bearer }`, "Content-Type": "application/json" },
       });
     }
