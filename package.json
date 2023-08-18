@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://kubackend.onrender.com",
+  "proxy": "https://kumars-backend-2.onrender.com/",
   "dependencies": {
     "@material-ui/data-grid": "^4.0.0-alpha.37",
     "@material-ui/lab": "^4.0.0-alpha.60",

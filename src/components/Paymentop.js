@@ -19,7 +19,7 @@ function Paymentop() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
   const getToken = async () => {
     try {
-      const { data } =await AuthAPI().get("https://kubackend.onrender.com/api/v1/braintree/token");
+      const { data } =await AuthAPI().get("https://kumars-backend-2.onrender.com/api/v1/braintree/token");
       console.log(data);
       setClientToken(data?.clientToken);
     } catch (error) {
@@ -36,7 +36,7 @@ function Paymentop() {
       setLoading(true);
       const { nonce } = await instance.requestPaymentMethod();
       console.log(cartitems, "cart");
-      await AuthAPI().post("https://kubackend.onrender.com/api/v1/braintree/payment", {
+      await AuthAPI().post("https://kumars-backend-2.onrender.com/api/v1/braintree/payment", {
         nonce,
         cartitems,
       });

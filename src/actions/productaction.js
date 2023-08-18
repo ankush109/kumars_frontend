@@ -38,7 +38,7 @@ export const getproduct = () => async (dispatch) => {
     dispatch({
       type: ALL_PRODUCT_REQUEST,
     });
-    const { data } = await axios.get("https://kubackend.onrender.com/api/v1/products");
+    const { data } = await axios.get("https://kumars-backend-2.onrender.com/api/v1/products");
     dispatch({
       type: ALL_PRODUCT_SUCCESS,
       payload: data,
@@ -53,7 +53,7 @@ export const getproduct = () => async (dispatch) => {
 export const getallproductsadmin = () => async (dispatch) => {
   try {
     dispatch({ type: ADMIN_PRODUCT_REQUEST });
-    const { data } = await axios.get("https://kubackend.onrender.com/api/v1/admin/products");
+    const { data } = await axios.get("https://kumars-backend-2.onrender.com/api/v1/admin/products");
     dispatch({
       type: ADMIN_PRODUCT_SUCCESS,
       payload: data.products,
@@ -80,9 +80,9 @@ export const getallproducts =
       });
       console.log(keyword, "keyword");
 
-      let link = `https://kubackend.onrender.com/api/v1/products?keyword=${keyword}&page=${currenentpage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
+      let link = `https://kumars-backend-2.onrender.com/api/v1/products?keyword=${keyword}&page=${currenentpage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
       if (category) {
-        link = `https://kubackend.onrender.com/api/v1/products?keyword=${keyword}&page=${currenentpage}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}&ratings[gte]=${ratings}`;
+        link = `https://kumars-backend-2.onrender.com/api/v1/products?keyword=${keyword}&page=${currenentpage}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}&ratings[gte]=${ratings}`;
       }
       console.log(link);
       const { data } = await axios.get(link);
@@ -102,7 +102,7 @@ export const getproductdetails = (id) => async (dispatch) => {
     dispatch({
       type: PRODUCT_DETAILS_REQUEST,
     });
-    const { data } = await axios.get(`https://kubackend.onrender.com/api/v1/product/${id}`);
+    const { data } = await axios.get(`https://kumars-backend-2.onrender.com/api/v1/product/${id}`);
     dispatch({
       type: PRODUCT_DETAILS_SUCCESS,
       payload: data,
@@ -123,7 +123,7 @@ export const newreview = (reviewdata) => async (dispatch) => {
     const config = {
       headers: { "Content-Type": "application/json" },
     };
-    const { data } = await AuthAPI().put(`https://kubackend.onrender.com/api/v1/review`, reviewdata, config);
+    const { data } = await AuthAPI().put(`https://kumars-backend-2.onrender.com/api/v1/review`, reviewdata, config);
     dispatch({
       type: NEW_REVIEW_SUCCESS,
       payload: data.success,
@@ -142,7 +142,7 @@ export const getallreviews = (id) => async (dispatch) => {
       type: ALL_REVIEW_REQUEST,
     });
 
-    const { data } = await axios.get(`https://kubackend.onrender.com/api/v1/reviews?id=${id}`);
+    const { data } = await axios.get(`https://kumars-backend-2.onrender.com/api/v1/reviews?id=${id}`);
     dispatch({
       type: ALL_REVIEW_SUCCESS,
       payload: data.reviews,
@@ -162,7 +162,7 @@ export const deletereviews = (reviewid, productid) => async (dispatch) => {
     });
 
     const { data } = await axios.delete(
-      `https://kubackend.onrender.com/api/v1/reviews?id=${reviewid}&productid=${productid}`
+      `https://kumars-backend-2.onrender.com/api/v1/reviews?id=${reviewid}&productid=${productid}`
     );
     dispatch({
       type: DELETE_REVIEW_SUCCESS,
@@ -186,7 +186,7 @@ export const newproduct = (productdata) => async (dispatch) => {
       headers: { "Content-Type": "application/json" },
     };
     const { data } = await axios.post(
-      `https://kubackend.onrender.com/api/v1/products/new`,
+      `https://kumars-backend-2.onrender.com/api/v1/products/new`,
       productdata,
       config
     );
@@ -212,7 +212,7 @@ export const updateproduct = (op, productdata) => async (dispatch) => {
       headers: { "Content-Type": "application/json" },
     };
     const { data } = await axios.put(
-      `https://kubackend.onrender.com/api/v1/products/${op}`,
+      `https://kumars-backend-2.onrender.com/api/v1/products/${op}`,
       productdata,
       config
     );
@@ -235,7 +235,7 @@ export const deleteproduct = (id) => async (dispatch) => {
       type: DELETE_PRODUCT_REQUEST,
     });
 
-    const { data } = await axios.delete(`https://kubackend.onrender.com/api/v1/products/${id}`);
+    const { data } = await axios.delete(`https://kumars-backend-2.onrender.com/api/v1/products/${id}`);
     dispatch({
       type: DELETE_PRODUCT_SUCCESS,
       payload: data.success,

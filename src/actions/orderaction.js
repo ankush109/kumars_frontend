@@ -28,7 +28,7 @@ export const createorder = (order) => async (dispatch, getstate) => {
   try {
     dispatch({ type: CREATE_ORDER_REQUEST });
 
-    const { data } =await AuthAPI().post("https://kubackend.onrender.com/api/v1/order/new", order);
+    const { data } =await AuthAPI().post("https://kumars-backend-2.onrender.com/api/v1/order/new", order);
     dispatch({ type: CREATE_ORDER_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
@@ -42,7 +42,7 @@ export const myorder = () => async (dispatch) => {
   try {
     dispatch({ type: MY_ORDERS_REQUEST });
 
-    const { data } = await AuthAPI().get("https://kubackend.onrender.com/api/v1/orders/me");
+    const { data } = await AuthAPI().get("https://kumars-backend-2.onrender.com/api/v1/orders/me");
     dispatch({ type: MY_ORDER_SUCCESS, payload: data.orders });
   } catch (error) {
     console.log(error);
@@ -57,7 +57,7 @@ export const getorderdetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: ORDER_DETAILS_REQUEST });
 
-    const { data } =await AuthAPI().get(`https://kubackend.onrender.com/api/v1/order/${id}`);
+    const { data } =await AuthAPI().get(`https://kumars-backend-2.onrender.com/api/v1/order/${id}`);
     dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data.order });
   } catch (error) {
     dispatch({
@@ -71,7 +71,7 @@ export const getallorders = () => async (dispatch, getstate) => {
   try {
     dispatch({ type: ALL_ORDERS_REQUEST });
 
-    const { data } = await axios.get("https://kubackend.onrender.com/api/v1/admin/orders");
+    const { data } = await axios.get("https://kumars-backend-2.onrender.com/api/v1/admin/orders");
     dispatch({ type: ALL_ORDERS_SUCCESS, payload: data.orders });
   } catch (error) {
     dispatch({
@@ -90,7 +90,7 @@ export const updateeorder = (id, order) => async (dispatch) => {
       },
     };
     const { data } = await axios.put(
-      `https://kubackend.onrender.com/api/v1/admin/orders/${id}`,
+      `https://kumars-backend-2.onrender.com/api/v1/admin/orders/${id}`,
       order,
       config
     );
@@ -106,7 +106,7 @@ export const deleteeorder = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_ORDER_REQUEST });
 
-    const { data } = await axios.delete(`https://kubackend.onrender.com/api/v1/admin/orders/${id}`);
+    const { data } = await axios.delete(`https://kumars-backend-2.onrender.com/api/v1/admin/orders/${id}`);
     dispatch({ type: DELETE_ORDER_SUCCESS, payload: data.success });
   } catch (error) {
     dispatch({
