@@ -34,6 +34,7 @@ const Cart = () => {
     console.log(cartitems, "cartitemss");
   };
   return (
+    
     <Fragment>
       {cartitems.length === 0 ? (
         <div className="emptyCart">

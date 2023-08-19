@@ -70,7 +70,7 @@ const Allproducts = () => {
     debouncedApiCall(newPrice);
   };
   return (
-    <div>
+    <>
       <div className="main">
         <div className="slider">
           <div className="filterBox">
@@ -135,7 +135,7 @@ const Allproducts = () => {
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 };
 

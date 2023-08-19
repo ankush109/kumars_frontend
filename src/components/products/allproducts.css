@@ -7,7 +7,7 @@
   background-color: rgb(255, 255, 255);
   padding: 0.3vmax;
 
-  width: 70%;
+  width: 100%;
 }
 .cat {
   padding: 0.3vmax;
@@ -36,6 +36,7 @@
   margin: 6vmax;
 }
 .slider {
+
   min-width: 30%;
   height: 100vh;
   display: flex;
@@ -132,4 +133,7 @@
 }
 
 @media screen and (max-width: 600px) {
+  .slider {
+    display: none;
+  }
 }

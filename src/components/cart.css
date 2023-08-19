@@ -37,13 +37,15 @@
 
 @media screen and (max-width: 600px) {
   .CartItemCard {
-    padding: 3vmax;
+    padding: 1vmax;
     height: 25vmax;
   }
   .CartItemCard > img {
     width: 10vmax;
   }
-
+.cartInput > input{
+  width: 100px;
+}
   .CartItemCard > div {
     margin: 1vmax 2vmax;
   }
@@ -221,9 +223,13 @@
 @media screen and (max-width: 600px) {
   .cartPage {
     padding: 0;
-    min-height: 60vh;
+    min-height: 100vh;
+    width: 100%;
+    display: block;
   }
-
+.O{
+    padding: 10px;
+}
   .cartHeader {
     width: 100%;
     font: 300 1.7vmax "Roboto";
@@ -244,7 +250,7 @@
   }
 
   .cartInput > input {
-    width: 2vmax;
+    width: 4vmax;
     padding: 1.5vmax;
     font: 400 1.8vmax "Roboto";
   }

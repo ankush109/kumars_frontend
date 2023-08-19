@@ -17,7 +17,7 @@ const Search = () => {
   };
 
   const inputStyle = {
-    width: "10vmax",
+
     height: "40px",
     padding: "10px",
     margin: "10px",
@@ -52,13 +52,13 @@ const Search = () => {
           onChange={(e) => setKeyword(e.target.value)}
         />
       
-      <SearchIcon 
+      {/* <SearchIcon 
       onClick={() => {
         // Programmatically trigger the submit button click
         document.querySelector('.searchBox button[type="submit"]').click();
       }}
       style={{color:"white"}}/>
-   
+    */}
       </form>
     </Fragment>
   );

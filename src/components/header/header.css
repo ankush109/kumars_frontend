@@ -111,4 +111,7 @@ justify-content: space-between;
   .h {
     display: none;
   }
+  .op{
+    display: none;
+  }
 }
