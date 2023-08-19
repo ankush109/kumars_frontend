@@ -17,7 +17,7 @@ const Search = () => {
   };
 
   const inputStyle = {
-    width: "760px",
+    width: "10vmax",
     height: "40px",
     padding: "10px",
     margin: "10px",
