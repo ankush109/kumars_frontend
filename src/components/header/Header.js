@@ -33,7 +33,9 @@ const {user,isauthenticated}=useSelector((state)=>state.user)
 
               }}>hello , {user?.name}</p> : (
                 <div>
-                <h3  style={{
+               <Link to="/" >
+
+ <h3  style={{
                 textDecoration: "none",
                 color:"white",
                 fontSize:"20px",
@@ -42,8 +44,9 @@ const {user,isauthenticated}=useSelector((state)=>state.user)
                 paddingRight:"120px"
 
               }}>
-                please login
+                 Login
                 </h3>
+  </Link>
                   </div>
               )
             }
