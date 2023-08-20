@@ -9,7 +9,9 @@ const Loader = () => {
   };
   const [loading, setLoading] = React.useState(true);
   return (
-    <div>
+    <div style={{
+      minHeight: "100vh",
+    }}>
       <FadeLoader
         color={"#008080"}
         loading={true}

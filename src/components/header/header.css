@@ -108,10 +108,225 @@ justify-content: space-between;
 
 @media screen and (max-width: 600px) {
   /* Style The Dropdown Button */
-  .h {
-    display: none;
+
+  .desktop-menu{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
   }
-  .op{
-    display: none;
+  .app-bar {
+    background-color: #0e1428;
+    position: static;
+    height: 70px;
+    margin-top: 0; /* Reset margin-top to remove the gap */
   }
+  
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Rest of your CSS styles... */
+  
+  
+  .toolbar {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+  }
+  
+  .logo {
+ 
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-link {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+  }
+  
+  
+  
+  .menu-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .menu-dropdown {
+    
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: black;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 150px;
+  }
+  
+  .menu-dropdown.open {
+    display: block;
+  }
+  
+  .menu-item {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+    font-size: 14px;
+  }
+  
+  .search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .user-info {
+    font-size: 20px;
+    padding: 20px;
+    color: white;
+    margin-left: auto;
+  }
+  
+  
+  .overlay.open {
+    display: block;
+  }
+  
+}
+/* ResponsiveAppBar.css */
+/* ResponsiveAppBar.css */
+.app-bar {
+  background-color: #0e1428;
+  position: static;
+  height: 70px;
+  margin-top: 0; /* Reset margin-top to remove the gap */
+}
+ 
+.menu-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+.mobile-menu{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* Rest of your CSS styles... */
+
+.desktop-menu{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+}
+
+.logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+
+
+.menu-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  display: none;
+}
+
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: black;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 150px;
+}
+
+.menu-dropdown.open {
+  display: block;
+}
+.menu-item > :hover{
+  color: #b52c2c;
+}
+.menu-item {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+
+.user-info {
+  font-size: 20px;
+  padding: 20px;
+  color: white;
+  margin-left: auto;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 100; /* Adjust as needed based on your layout */
+}
+
+.overlay.open {
+  display: block;
 }

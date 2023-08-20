@@ -1,119 +1,100 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import { useState } from 'react';
-import Search from './Search';
+import React, { useEffect, useRef, useState } from 'react';
+import './header.css'; // Import your CSS file
 import { useSelector } from 'react-redux';
+
 const pages = ['Products', 'Orders', 'Cart'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function ResponsiveAppBar() {
-  const { isAuthenticated, user } = useSelector((state) => state.user);
-  const [anchorElNav, setAnchorElNav] =useState(null)
-  const [anchorElUser, setAnchorElUser] =useState(null)
+function Header() {
+  const {
+    isauthenticated,
+    user
+  } = useSelector((state) => state.user);
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const menuRef = useRef(null); // Add a ref to the menu container
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  useEffect(() => {
+    const handleClickOutsideMenu = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        handleCloseNavMenu();
+      }
+    };
+
+    window.addEventListener('touchend', handleClickOutsideMenu);
+
+    return () => {
+      window.removeEventListener('touchend', handleClickOutsideMenu);
+    };
+  }, []);
 
   return (
-    <AppBar position="static " style={{
-      
-    }} sx={{ backgroundColor: 'black' }}>
-      <Container maxWidth="xl">
-        <Toolbar >
-          <h2>
-            <a href="/" style={{color:"white",textDecoration:"none" ,paddingRight:"15px"}}>Komars</a>
+    <div className="app-bar">
+      <div className="container" >
+        <div className="toolbar">
+          <h2 className="logo">
+            <a href="/" className="logo-link">
+              Komars
+            </a>
           </h2>
-          
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
+
+          <div className='mobile-menu'  ref={menuRef}>
+            <button
+              className="menu-button"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              aria-label="Open navigation menu"
             >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
+              Menu
+            </button>
+            <div
+              className={`menu-dropdown ${anchorElNav ? 'open' : ''}`}
+              onClick={handleCloseNavMenu}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography   key={page}
-                onClick={()=>{
-                  window.location.href=`/${page}`
-                }}
-                textAlign="center">{page}</Typography>
-                </MenuItem>
+                <a href={`/${page}`} key={page} className="menu-item">
+                  {page}
+                </a>
               ))}
-            </Menu>
-          </Box>
-          <Search/>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            </div>
+          </div>
+
+          <div className="search">
+            {/* Include your Search component here */}
+          </div>
+
+          <div className="desktop-menu">
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={()=>{
-                  window.location.href=`/${page}`
-                }}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
+              <a href={`/${page}`} key={page} className="menu-item">
                 {page}
-              </Button>
+              </a>
             ))}
-          </Box>
-<h3 className='op' style={{
+            <h3 className="user-info">
+           {
+!isauthenticated? <p style={{
+  cursor:'pointer',
+  color:'white',
+ paddingTop:'20px',
+  fontWeight:'semi-bold',
+  fontSize:'15px',
 
 
-fontSize:"20px",
-padding:"20px"
-}}>{isAuthenticated ?<>Hello,{
-  user.name
-}</> :"" }</h3>
+}}>hello , {user?.name}</p> : <>Login</>
+           }
+          </h3>
+          </div>
+
           
-        </Toolbar>
-      </Container>
-    </AppBar>
+        </div>
+      </div>
+    </div>
   );
 }
-export default ResponsiveAppBar;
+
+export default Header;

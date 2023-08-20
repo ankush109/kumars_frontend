@@ -108,7 +108,7 @@ const Productdetails = () => {
               </Caraousel>
             </div>
 
-            <div>
+            <div className="foop">
               <div className="detailsBlock-1">
                 <h2>{product.name}</h2>
                 <p>Product # {product._id}</p>
@@ -128,7 +128,15 @@ const Productdetails = () => {
                 <div className="detailsBlock-3-1">
                   <div className="detailsBlock-3-1-1">
                     <button onClick={decreasequantity}>-</button>
-                    <input readOnly type="number" value={quantity} />
+                    <input style={{
+                      width: "50px",
+                      height: "30px",
+                      textAlign: "left",
+                      border: "none",
+                      outline: "none",
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }} readOnly type="number" value={quantity} />
                     <button onClick={increasequantity}>+</button>
                   </div>
                   {"  "}
@@ -149,7 +157,7 @@ const Productdetails = () => {
               </button>
             </div>
           </div>
-          <h3 className="reviewsHeading">reviews</h3>
+          <h1 className="reviewsHeading">reviews</h1>
 
           <Dialog
             aria-labelledby="simple-dialog-title"

@@ -138,8 +138,21 @@ input {
     height: 40vh;
     display: flex;
   }
-  .productcard {
-    width: 40vw;
-    margin: 2vmax;
+  .banner >img{
+    padding-top: 10px;
+    width:74%;
+    margin-top: 40px;
+    height: 100%;
   }
+  .w {
+   padding-left: 45px;
+    display: flex;
+    min-height: 500px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: rgb(51, 48, 100);
+    font-weight: bold;
+  }
+  
 }

@@ -11,6 +11,7 @@ import Loader from "../layout/Loader";
 import { useAlert } from "react-alert";
 import FProduct from "../products/Featured";
 import Header from "../header/Header";
+import Footer from "../footer/footer";
 
 const Home = () => {
   const alert = useAlert();
@@ -41,6 +42,7 @@ const Home = () => {
           </div>
         </Fragment>
       )}
+      <Footer />
     </Fragment>
   );
 };

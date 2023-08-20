@@ -130,7 +130,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 160px;
+  width: 130px;
   height: 28px;
   padding: 20px;
   margin: 1vmax 0;
@@ -159,7 +159,12 @@
   background-color: rgb(116, 116, 116);
   transform: scale(1.1);
 }
-
+.redColor{
+  color: red;
+}
+.greenColor{
+  color: green;
+}
 .submitDialog {
   display: flex;
   flex-direction: column;
@@ -174,7 +179,7 @@
 
 .reviewsHeading {
   color: #000000be;
-  font: 500 1.4vmax "Roboto";
+  font: 900 2.4vmax "Roboto";
   text-align: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.226);
   padding: 1vmax;
@@ -210,7 +215,12 @@
   color: rgba(0, 0, 0, 0.445);
   font: 300 0.8vmax cursive;
 }
+.foop{
+  display: flex;
+  justify-content:center;
+  width: 100%;
 
+}
 .noReviews {
   font: 400 1.3vmax "Gill Sans";
   text-align: center;
@@ -254,6 +264,13 @@
 }
 
 @media screen and (max-width: 700px) {
+  .reviewCard{
+    width: 80vw;
+  }
+  .reviews{
+    flex-direction: column;
+    align-items: center;
+  }
   .ProductDetails {
     flex-direction: column;
     height: unset;
@@ -290,9 +307,9 @@
   }
 
   .detailsBlock-3-1-1 {
-    padding: 2vmax 0;
+    padding: 3vmax 0;
     justify-content: center;
-    background-color: rgb(7, 34, 58);
+  
   }
   .detailsBlock-3-1-1 > button {
     padding: 1.2vmax;
@@ -303,6 +320,7 @@
   .detailsBlock-3-1-1 > input {
     width: 8vmax;
     font: 400 1.8vmax "Roboto";
+
   }
 
   .detailsBlock-3-1 > button:last-child {
@@ -317,7 +335,9 @@
     text-align: center;
     font: 400 2vmax "Roboto";
   }
-
+.f{
+  display: flex;
+}
   .detailsBlock-4 {
     font: 500 2.5vmax sans-serif;
   }
