@@ -31,7 +31,7 @@ const {user,isauthenticated}=useSelector((state)=>state.user)
                 paddingTop:"10px",
                 paddingRight:"120px"
 
-              }}>hello , {user.name}</p> : (
+              }}>hello , {user?.name}</p> : (
                 <div>
                 <h3>
                 please login
