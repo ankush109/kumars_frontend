@@ -1,67 +1,8 @@
-/* Style The Dropdown Button */
-.dropbtn {
-  background-color: #293458;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-.h > a {
-  color: white;
-  text-decoration: none;
-}
-.search {
 
-}
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
-}
-.dd{
-  display: flex;
-justify-content: space-between;
-
-
-}
 .speedDial {
   position: fixed;
   right: 3vmax;
-  top: 3vmax;
+  top: 7vmax;
 }
 
 .speedDialIcon {
@@ -70,263 +11,168 @@ justify-content: space-between;
   border-radius: 100%;
 }
 
-.topnav {
-  background-color: rgb(8, 24, 44);
-  height: 10vh;
-  width: 100%;
-  position: sticky;
-  top: 0;
-  display: flex;
-  z-index: 2; 
-  align-items: center;
-}
-.topnav > span {
-  font-size: 2.5vh;
-  font-weight: bold;
-  color: white;
-  font-family: "Roboto", sans-serif;
 
-  transition: all 0.2s ease-in-out;
+.speedDial {
+  position: fixed;
+  right: 3vmax;
+  top: 7vmax;
 }
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
+.nav-logo > hover{
+  color: #fff;
   text-decoration: none;
-  font-size: 17px;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  border-bottom: 3px solid transparent;
+}
+ .navlink >:hover {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  border-bottom: 3px solid transparent;
+}
+.speedDialIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  z-index: 100;
 }
 
-/* Change the color of links on hover */
-/* .topnav a:hover {
-  background-color: #ddd;
-  color: black;
-} */
-
-/* Add a color to the active/current link */
-
-@media screen and (max-width: 600px) {
-  /* Style The Dropdown Button */
-
-  .desktop-menu{
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    align-items: center;
-  }
-  .app-bar {
-    background-color: #0e1428;
-    position: static;
-    height: 70px;
-    margin-top: 0; /* Reset margin-top to remove the gap */
-  }
-  
-  .container {
-    max-width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-  }
-  
-  /* Rest of your CSS styles... */
-  
-  
-  .toolbar {
-    display: flex;
-    align-items: center;
-    padding: 0 15px;
-    width: 100%;
-    max-width: 1200px;
-    justify-content: space-between;
-  }
-  
-  .logo {
- 
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo-link {
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-  }
-  
-  
-  
-  .menu-button {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .menu-dropdown {
-    
-    position: absolute;
-    top: 40px;
-    left: 0;
-    background-color: black;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    width: 150px;
-  }
-  
-  .menu-dropdown.open {
-    display: block;
-  }
-  
-  .menu-item {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 5px 0;
-    font-size: 14px;
-  }
-  
-  .search {
-    flex: 1;
-    display: flex;
-    align-items: center;
-  }
-  
-  
-  .user-info {
-    font-size: 20px;
-    padding: 20px;
-    color: white;
-    margin-left: auto;
-  }
-  
-  
-  .overlay.open {
-    display: block;
-  }
-  
-}
-/* ResponsiveAppBar.css */
-/* ResponsiveAppBar.css */
-.app-bar {
-  background-color: #0e1428;
-  position: static;
-  height: 70px;
-  margin-top: 0; /* Reset margin-top to remove the gap */
-}
- 
-.menu-button {
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-}
-.mobile-menu{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-}
-.container {
-  max-width: 100%;
-  margin: 0 auto;
+.navbar {
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: #363636;
+  position: sticky;
+  top: 0; 
+  z-index: 100;
+
 }
 
-/* Rest of your CSS styles... */
-
-.desktop-menu{
+.nav-container {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: center;
   align-items: center;
-}
-
-.toolbar {
-  display: flex;
-  align-items: center;
-  padding: 0 15px;
   width: 100%;
-  max-width: 1200px;
-  justify-content: space-between;
+  position: sticky;
+  height: 60px;
+  max-width: 1500px;
 }
 
-.logo {
-  flex: 1;
-  display: flex;
+.nav-logo {
+  color: #e3e3e3;
   align-items: center;
-}
-
-.logo-link {
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-}
-
-
-
-.menu-button {
-  background: none;
-  border: none;
-  color: white;
+  margin-left: 5px;
   cursor: pointer;
-  font-size: 16px;
-  display: none;
-}
-
-.menu-dropdown {
-  display: none;
-  position: absolute;
-  top: 40px;
-  left: 0;
-  background-color: black;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  width: 150px;
-}
-
-.menu-dropdown.open {
-  display: block;
-}
-.menu-item > :hover{
-  color: #b52c2c;
-}
-.menu-item {
-  display: block;
-  color: white;
   text-decoration: none;
-  padding: 5px 0;
-  font-size: 14px;
+  font-size: 2rem;
+  flex-grow: 1;
+  font-weight: 500;
 }
 
-.search {
-  flex: 1;
+.nav-menu {
   display: flex;
-  align-items: center;
+  list-style: none;
+  text-align: center;
+  margin-right: 2rem;
 }
 
-
-.user-info {
-  font-size: 20px;
-  padding: 20px;
-  color: white;
-  margin-left: auto;
-}
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+.nav-links {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-  z-index: 100; /* Adjust as needed based on your layout */
+  border-bottom: 3px solid transparent;
+}
+.fa-code {
+  margin-left: 1rem;
 }
 
-.overlay.open {
+.nav-item {
+  line-height: 40px;
+  margin-right: 1rem;
+}
+
+.nav-item:after {
+  content: "";
   display: block;
+  height: 3px;
+  width: 0;
+  background: transparent;
+  transition: width 0.7s ease, background-color 0.5s ease;
+}
+
+.nav-item:hover:after {
+  width: 100%;
+  background: #e8e8e6;
+}
+
+.nav-item .active {
+  color: #e7e6e1;
+  border-bottom: 3px solid #f0f0ef;
+}
+
+.nav-icon {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .speedDial {
+    position: fixed;
+    right: 3vmax;
+    top: 15vmax;
+    
+  }
+  
+
+  .nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    z-index: 10000;
+    max-width: 1500px;
+  }
+  
+  .nav-menu {
+    display: block;
+    flex-direction: column;
+    width: 100%;
+    border-top: 1pxsolid #fff;
+    position: absolute;
+    top: 80px;
+    left:-130%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 5000;
+  }
+
+  .nav-menu.active {
+    background-color: #363636;
+    left: 0px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+  .nav-item .active {
+    color: #ffdd40;
+    border: none;
+  }
+  .nav-links {
+    padding: 1.5rem;
+    width: 100%;
+    display: table;
+  }
+
+  .nav-icon {
+    display: block;
+    position: absolute;
+  top: -11px;
+  right :-18px;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #ffdd40;
+  }
 }

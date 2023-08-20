@@ -1,99 +1,80 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './header.css'; // Import your CSS file
-import { useSelector } from 'react-redux';
-
-const pages = ['Products', 'Orders', 'Cart'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import "./header.css";
+import MenuIcon from '@mui/icons-material/Menu';
+import Search from "./Search";
 function Header() {
-  const {
-    isauthenticated,
-    user
-  } = useSelector((state) => state.user);
-  const [anchorElNav, setAnchorElNav] = useState(null);
-  const menuRef = useRef(null); // Add a ref to the menu container
+  const [click, setClick] = useState(false);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  useEffect(() => {
-    const handleClickOutsideMenu = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        handleCloseNavMenu();
-      }
-    };
-
-    window.addEventListener('touchend', handleClickOutsideMenu);
-
-    return () => {
-      window.removeEventListener('touchend', handleClickOutsideMenu);
-    };
-  }, []);
-
+  const handleClick = () => setClick(!click);
   return (
-    <div className="app-bar">
-      <div className="container" >
-        <div className="toolbar">
-          <h2 className="logo">
-            <a href="/" className="logo-link">
-              Komars
-            </a>
-          </h2>
+    <>
+      <nav className="navbar">
+        <div className="nav-container">
+         <Link to="/" className="nav-logo">
+         <h1  style={{
+            textDecoration: "none",
+          }}exact to="/" className="nav-logo">
+           KOMARS
+            <i className="fas fa-code"></i>
+          </h1>
+          </Link>
+<Search />
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <NavLink
 
-          <div className='mobile-menu'  ref={menuRef}>
-            <button
-              className="menu-button"
-              onClick={handleOpenNavMenu}
-              aria-label="Open navigation menu"
-            >
-              Menu
-            </button>
-            <div
-              className={`menu-dropdown ${anchorElNav ? 'open' : ''}`}
-              onClick={handleCloseNavMenu}
-            >
-              {pages.map((page) => (
-                <a href={`/${page}`} key={page} className="menu-item">
-                  {page}
-                </a>
-              ))}
-            </div>
+                exact
+                to="/"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/products"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Products
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/cart"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                My Cart
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/orders"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+               My Orders
+              </NavLink>
+            </li>
+          </ul>
+          <div className="nav-icon" onClick={handleClick}>
+            <i className={click ? "fas fa-times" : "fas fa-bars"}> 
+            <MenuIcon />
+            </i>
           </div>
-
-          <div className="search">
-            {/* Include your Search component here */}
-          </div>
-
-          <div className="desktop-menu">
-            {pages.map((page) => (
-              <a href={`/${page}`} key={page} className="menu-item">
-                {page}
-              </a>
-            ))}
-            <h3 className="user-info">
-           {
-!isauthenticated? <p style={{
-  cursor:'pointer',
-  color:'white',
- paddingTop:'20px',
-  fontWeight:'semi-bold',
-  fontSize:'15px',
-
-
-}}>hello , {user?.name}</p> : <>Login</>
-           }
-          </h3>
-          </div>
-
-          
         </div>
-      </div>
-    </div>
+      </nav>
+    </>
   );
 }
 
