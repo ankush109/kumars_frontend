@@ -23,7 +23,7 @@ const {user,isauthenticated}=useSelector((state)=>state.user)
           </Link>
           <div className="p">
             {
-              !isauthenticated ? <p style={{
+              isauthenticated ? <p style={{
                 textDecoration: "none",
                 color:"white",
                 fontSize:"20px",
