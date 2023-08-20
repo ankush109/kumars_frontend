@@ -33,7 +33,7 @@ const {user,isauthenticated}=useSelector((state)=>state.user)
 
               }}>hello , {user?.name}</p> : (
                 <div>
-               <Link to="/" >
+               <Link to="/login" >
 
  <h3  style={{
                 textDecoration: "none",
