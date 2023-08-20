@@ -72,3 +72,14 @@
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 600px){
+  .img {
+    display: none;
+  }
+  .login {
+
+    width: 100%;
+    
+  
+  }
+}
