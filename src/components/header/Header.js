@@ -33,7 +33,15 @@ const {user,isauthenticated}=useSelector((state)=>state.user)
 
               }}>hello , {user?.name}</p> : (
                 <div>
-                <h3>
+                <h3  style={{
+                textDecoration: "none",
+                color:"white",
+                fontSize:"20px",
+                fontWeight:"semi-bold",
+                paddingTop:"10px",
+                paddingRight:"120px"
+
+              }}>
                 please login
                 </h3>
                   </div>
