@@ -27,15 +27,7 @@ const {user,isAuthenticated}=useSelector((state)=>state.user)
           <div className="p">
             {
               isAuthenticated ? (
-                <p style={{
-                textDecoration: "none",
-                color:"white",
-                fontSize:"20px",
-                fontWeight:"semi-bold",
-                paddingTop:"10px",
-                paddingRight:"120px"
-
-              }}>hello , {user?.name}</p>
+                <p>hello , {user?.name}</p>
               ) : (
                 <div>
                <Link style={{

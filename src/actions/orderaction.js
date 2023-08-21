@@ -71,7 +71,8 @@ export const getallorders = () => async (dispatch, getstate) => {
   try {
     dispatch({ type: ALL_ORDERS_REQUEST });
 
-    const { data } = await axios.get("https://kumars-backend-2.onrender.com/api/v1/admin/orders");
+    const { data } =await AuthAPI().get("/admin/orders");
+    console.log(data);
     dispatch({ type: ALL_ORDERS_SUCCESS, payload: data.orders });
   } catch (error) {
     dispatch({
@@ -89,7 +90,7 @@ export const updateeorder = (id, order) => async (dispatch) => {
         "Content-Type": "application/json",
       },
     };
-    const { data } = await axios.put(
+    const { data } = await AuthAPI().put(
       `https://kumars-backend-2.onrender.com/api/v1/admin/orders/${id}`,
       order,
       config
@@ -106,7 +107,7 @@ export const deleteeorder = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_ORDER_REQUEST });
 
-    const { data } = await axios.delete(`https://kumars-backend-2.onrender.com/api/v1/admin/orders/${id}`);
+    const { data } = await AuthAPI().delete(`https://kumars-backend-2.onrender.com/api/v1/admin/orders/${id}`);
     dispatch({ type: DELETE_ORDER_SUCCESS, payload: data.success });
   } catch (error) {
     dispatch({

@@ -18,7 +18,7 @@ const clientId = "381683308790-2df2pegumahvgjuiudcav6l3mevderdv.apps.googleuserc
 
     const responseGoogle = (response) => {
         // console.log(response)
-        axios.post('/api/v1/googlelogin',
+        axios.post('https://kumars-backend-2.onrender.com/api/v1/googlelogin',
             { idToken: response.tokenId }
         ).then(response => {
             // console.log(response)

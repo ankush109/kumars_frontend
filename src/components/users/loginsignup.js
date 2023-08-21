@@ -139,6 +139,9 @@ const LoginSignUp = (location) => {
             />
           </div>
         </div>
+        {
+      !stateAuth ? <Login1 response={response} /> : navigate('/')
+     }
         <div className="btn">
         <Button style={{
                 width: "230px",
@@ -152,6 +155,7 @@ const LoginSignUp = (location) => {
      }}>
      <p className="h">Dont have an account ? Register</p></Link>
       </div>
+     
       </form>
    
     </div>

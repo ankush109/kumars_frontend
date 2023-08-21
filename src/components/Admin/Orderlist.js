@@ -85,6 +85,13 @@ const Orderlist = () => {
       minWidth: 70,
       flex: 0.5,
     },
+    {
+      field: "paymentmethod",
+      headerName: "paymentmethod",
+
+      minWidth: 70,
+      flex: 0.5,
+    },
 
     {
       field: "actions",
@@ -115,10 +122,10 @@ const Orderlist = () => {
     orders.forEach((item) => {
       rows.push({
         id: item._id,
-        itemsQty: item.orderitems.length,
-        amount: item.totalprice,
-        status: item.orderstatus,
-        phonenumber: item.shippinginfo.phonenumber,
+        itemsQty: item.products?.length,
+        amount: item.products?.reduce( (acc, item) => acc + item.price * item.quantity, 0),
+        status: item.status,
+        paymentmethod: item.payment?.success ? "Paid" : "Not Paid",
       });
     });
 
