@@ -6,8 +6,11 @@ import Search from "./Search";
 import { useSelector } from "react-redux";
 function Header() {
   const [click, setClick] = useState(false);
-const {user,isauthenticated}=useSelector((state)=>state.user)
-  const handleClick = () => setClick(!click);
+const {user,isAuthenticated}=useSelector((state)=>state.user)
+  const handleClick = () => {
+    setClick(!click);
+    console.log(isAuthenticated,'auth')
+  }
   return (
     <>
       <nav className="navbar">
@@ -23,7 +26,8 @@ const {user,isauthenticated}=useSelector((state)=>state.user)
           </Link>
           <div className="p">
             {
-              isauthenticated ? <p style={{
+              isAuthenticated ? (
+                <p style={{
                 textDecoration: "none",
                 color:"white",
                 fontSize:"20px",
@@ -31,9 +35,12 @@ const {user,isauthenticated}=useSelector((state)=>state.user)
                 paddingTop:"10px",
                 paddingRight:"120px"
 
-              }}>hello , {user?.name}</p> : (
+              }}>hello , {user?.name}</p>
+              ) : (
                 <div>
-               <Link to="/login" >
+               <Link style={{
+                textDecoration: "none",
+               }} to="/login" >
 
  <h3  style={{
                 textDecoration: "none",
@@ -44,14 +51,16 @@ const {user,isauthenticated}=useSelector((state)=>state.user)
                 paddingRight:"120px"
 
               }}>
-                 Login
+                Please  Login
                 </h3>
   </Link>
                   </div>
               )
             }
           </div>
+<div className="search">
 <Search />
+</div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <NavLink

@@ -10,7 +10,7 @@ function Footer() {
 <div className='leftfooter'>
 <h1>KOMARS</h1>
 
-
+<p>&copy; 2023 KOMARS. All rights reserved.</p>
 
 </div>
 </footer>

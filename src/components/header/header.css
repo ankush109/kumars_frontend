@@ -1,4 +1,4 @@
-
+  
 .speedDial {
   position: fixed;
   right: 3vmax;
@@ -92,7 +92,13 @@
   line-height: 40px;
   margin-right: 1rem;
 }
+.p{
+  width: 100px;
+  display: flex;
+  justify-content:left;
+  align-items: center;
 
+}
 .nav-item:after {
   content: "";
   display: block;
@@ -122,7 +128,7 @@
   }
   .speedDial {
     position: fixed;
-    right: 3vmax;
+    right: 8vmax;
     top: 15vmax;
     
   }
