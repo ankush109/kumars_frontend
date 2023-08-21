@@ -33,10 +33,10 @@ const LoginSignUp = (location) => {
   const { name, email, password } = user;
   const [avatar, setavatar] = useState();
   const [avatarPreview, setavatarpreview] = useState("");
-
+const [loading1, setLoading1] = useState(false);
   const loginSubmit = (e) => {
     e.preventDefault();
-  
+    setLoading1(true)
     dispatch(login(loginEmail, loginPassword));
   };
 
@@ -143,7 +143,9 @@ const LoginSignUp = (location) => {
       !stateAuth ? <Login1 response={response} /> : navigate('/')
      }
         <div className="btn">
-        <Button style={{
+        <Button disabled={
+          loading1 ? true : false
+        } style={{
                 width: "230px",
                 borderRadius: "120px",
         }}type="submit" variant="contained">Login</Button>

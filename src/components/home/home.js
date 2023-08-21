@@ -12,10 +12,12 @@ import { useAlert } from "react-alert";
 import FProduct from "../products/Featured";
 import Header from "../header/Header";
 import Footer from "../footer/footer";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
+  const { isAuthenticated,user  } = useSelector((state) => state.user);
   const { loading, error, products, productscount } = useSelector(
     (state) => state.product
   );
@@ -32,7 +34,23 @@ const Home = () => {
         <Loader />
       ) : (
         <Fragment>
-         
+         <div className="opo"  style={{ visibility: isAuthenticated ? "hidden" : "visible" }}>
+          {
+            !isAuthenticated ? (
+              <div>
+                <Link style={{
+                  color:"white",
+                  textDecoration:"none",
+                  fontSize:"20px",
+                  fontWeight:"bold",
+
+                }} to="/login" >
+              <p className="blinking-text">Login/Register</p>
+                </Link>
+                </div>
+            ) :""
+          }
+          </div>
           <h2 className="homeheading"> Featured Products</h2>
           <div className="w">
             {products &&

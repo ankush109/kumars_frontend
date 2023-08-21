@@ -33,10 +33,10 @@ const Register = (location) => {
   const { name, email, password } = user;
   const [avatar, setavatar] = useState();
   const [avatarPreview, setavatarpreview] = useState("");
-
+  const [loading1, setLoading1] = useState(false);
   const loginSubmit = (e) => {
     e.preventDefault();
-  
+    setLoading1(true);
     dispatch(login(loginEmail, loginPassword));
   };
 
@@ -132,7 +132,9 @@ const Register = (location) => {
           </div>
         </div>
         <div className="btn">
-        <Button style={{
+        <Button disabled={
+            loading1 ? true : false
+        } style={{
                 width: "230px",
                 borderRadius: "120px",
         }}type="submit" variant="contained">Register</Button>

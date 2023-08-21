@@ -7,6 +7,21 @@
   align-items: center;
   background-repeat: no-repeat;
 }
+@keyframes blink {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+.blinking-text {
+  animation: blink 1s infinite;
+}
 .s{
   width: 100%;
   display: flex;
@@ -128,11 +143,25 @@ input {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1vmax;
 }
+.opo {
+display: none;
+
+}
 .productcard:hover {
   box-shadow: 0 0 5px rgb(168, 168, 168);
   transform: translateY(-1vmax);
 }
 @media screen and (max-width: 700px) {
+  .opo {
+    display: block;
+    padding: 10px;
+    width: 170px;
+    height: 50px;
+    margin-top: 20px;
+    background-color:rgb(142, 142, 145); 
+    
+    
+    }
   .banner {
     background-image: url(https://www-cdn.bigcommerce.com/assets/Article-Header_Ecommerce_Website.jpg);
     height: 40vh;

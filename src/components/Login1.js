@@ -24,7 +24,7 @@ const clientId = "381683308790-2df2pegumahvgjuiudcav6l3mevderdv.apps.googleuserc
             // console.log(response)
             props.response(response)
             Cookies.set('user', JSON.stringify(response)); // Expires in 7 days
-
+            
             dispatch({type:LOGIN_SUCCESS,payload:response})
             
         })
