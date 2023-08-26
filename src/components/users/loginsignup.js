@@ -1,6 +1,7 @@
 import React, { Fragment, useRef, useState, useEffect } from "react";
 import "../users/login.css";
 import Loader from "../layout/Loader";
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useDispatch, useSelector } from "react-redux";
 import { clearerrors, login, register } from "../../actions/useraction";
@@ -9,6 +10,7 @@ import HttpsIcon from "@mui/icons-material/Https";
 import EmailIcon from "@mui/icons-material/Email";
 import { Link, useNavigate } from "react-router-dom";
 import Login1 from "../Login1";
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import { Button, TextField } from "@mui/material";
 const LoginSignUp = (location) => {
   const dispatch = useDispatch();
@@ -30,6 +32,7 @@ const LoginSignUp = (location) => {
     email: "",
     password: "",
   });
+  const [inputstatus, setinputstatus] = useState("password");
   const { name, email, password } = user;
   const [avatar, setavatar] = useState();
   const [avatarPreview, setavatarpreview] = useState("");
@@ -112,36 +115,62 @@ const [loading1, setLoading1] = useState(false);
           <h2>Welcome to Komars</h2>
         </div>
         <div className="login-container">
-          <div>
+       <div className="op">
+       <div>
             <TextField
               required
             value={loginEmail}
             onChange={(e) => setLoginEmail(e.target.value)}
               id="standard-basic"
               style={{
-                width: "230px",
+                width: "280px",
+                
               }}
               label="Email"
               variant="standard"
             />
           </div>
-          <div>
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+          }}>
             <TextField
             required
             value={loginPassword}
             onChange={(e) => setLoginPassword(e.target.value)}
               style={{
-                width: "230px",
+                width: "280px",
+                marginTop: "20px",
               }}
               id="standard-basic"
               label="Password"
+              type={inputstatus}
               variant="standard"
             />
+            {
+              inputstatus === "password" ? <VisibilityOffIcon  onClick={()=>{
+                if(inputstatus === "password"){
+                  setinputstatus("text")
+                }else{
+                  setinputstatus("password")
+                }
+              }
+              }/> : <RemoveRedEyeIcon onClick={()=>{  
+                if(inputstatus === "password"){
+                  setinputstatus("text")
+                }else{
+                  setinputstatus("password")
+                }
+              }} />
+            }
+          
+              
           </div>
+       </div>
         </div>
-        {
+        {/* {
       !stateAuth ? <Login1 response={response} /> : navigate('/')
-     }
+     } */}
         <div className="btn">
         <Button disabled={
           loading1 ? true : false

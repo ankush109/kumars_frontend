@@ -6,7 +6,7 @@ import appstore from "../../images/appstore.png"
 
 function Footer() {
   return (
-<footer id="footer">
+
 <div className='leftfooter'>
 <h1>KOMARS</h1>
 
@@ -14,7 +14,7 @@ function Footer() {
 
 </div>
 
-</footer>
+
   )
 }
 

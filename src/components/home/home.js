@@ -13,6 +13,7 @@ import FProduct from "../products/Featured";
 import Header from "../header/Header";
 import Footer from "../footer/footer";
 import { Link } from "react-router-dom";
+import Carousel from "../Carousal";
 
 const Home = () => {
   const alert = useAlert();
@@ -51,16 +52,17 @@ const Home = () => {
             ) :""
           }
           </div>
-          <h2 className="homeheading"> Featured Products</h2>
+          <div className="carousal">
+          <Carousel/>
+          </div>
+         
           <div className="w">
-            {products &&
-              products
-                .slice(0, 7)
-                .map((product) => <FProduct product={product} />)}
+            {
+              products?.map((product) => <FProduct product={product} />)}
           </div>
         </Fragment>
       )}
-      <Footer />
+     
     </Fragment>
   );
 };

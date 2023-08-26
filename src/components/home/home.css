@@ -1,3 +1,9 @@
+.carousal{
+  position: relative; /* This is important for positioning the overlay */
+
+
+}
+
 .banner {
 
   height: 50vh;
@@ -49,11 +55,15 @@
 
 }
 .w {
+  position: absolute;
+  top: 50%;
+  left: 0;
   width: 100%;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+
   color: rgb(51, 48, 100);
   font-weight: bold;
 }
@@ -142,6 +152,21 @@ input {
   color: red;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1vmax;
+}
+.ban{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(51, 48, 100);
+  font-weight: bold;
+  padding:10px ;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.ban > img {
+  width: 80%;
+  height: 100%;
 }
 .opo {
 display: none;

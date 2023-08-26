@@ -96,7 +96,7 @@ const Register = (location) => {
                 onChange={registerDataChange}
               id="standard-basic"
               style={{
-                width: "230px",
+                width: "280px",
               }}
               label="name"
               variant="standard"
@@ -109,7 +109,7 @@ const Register = (location) => {
             required
             onChange={registerDataChange}
               style={{
-                width: "230px",
+                width: "280px",
               }}
               id="standard-basic"
               label="Email"
@@ -123,7 +123,7 @@ const Register = (location) => {
             onChange={registerDataChange}
         value={password}
               style={{
-                width: "230px",
+                width: "280px",
               }}
               id="standard-basic"
               label="Password"
