@@ -4,7 +4,7 @@
 
 ## backend code is here if you wish to check it out 
 
-![backend](https://github.com/ankush109/kumars_backend)
+-- [backend](https://github.com/ankush109/kumars_backend)
 
 
 
