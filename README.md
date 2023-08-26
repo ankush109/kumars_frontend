@@ -1,5 +1,12 @@
-# KUMARS - A one Stop place to sell and buy goods 
-## will be adding more and more features and perfecting it to the end of this year 
+# KUMARS - A One Stop place to Sell and Buy Goods 
+## Will be adding more and more features 
+
+
+## backend code is here if you wish to check it out 
+
+![backend](https://github.com/ankush109/kumars_backend)
+
+
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
@@ -28,7 +35,7 @@ Lastly I have deployed the backend on render and frontend on vercel
 ![](https://raw.githubusercontent.com/ankush109/kumars_frontend/main/public/readme_images/shippinginfp.png)
 
 
-## payment gateway  (yes its working)
+## payment gateway  (payment gateway is of paypal and braintree) [WORKING]
 
 ## use card and enter pin as 4242 4242 4242 4242 
 ## date as future date eg - 12/24
