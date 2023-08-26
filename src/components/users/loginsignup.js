@@ -109,10 +109,10 @@ const [loading1, setLoading1] = useState(false);
       </div>
       <form className="login" onSubmit={loginSubmit}>
         <div className="header1">
-          <h1>KOMARS</h1>
+          <h1>KUMARS</h1>
         </div>
         <div className="header2">
-          <h2>Welcome to Komars</h2>
+          <h2>Welcome to KUMARS</h2>
         </div>
         <div className="login-container">
        <div className="op">

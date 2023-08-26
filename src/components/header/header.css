@@ -66,14 +66,18 @@ padding-right: 15px;
 }
 
 .nav-logo {
-  color: #e3e3e3;
+display: flex;
+  justify-content: center;
   align-items: center;
-  margin-left: 5px;
-  cursor: pointer;
+  color: #fff;
   text-decoration: none;
-  font-size: 2rem;
-  flex-grow: 1;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: 24px;
+  margin-right: 24px;
+  cursor: pointer;
+  z-index: 100;
+
 }
 
 .nav-menu {

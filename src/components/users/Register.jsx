@@ -82,10 +82,10 @@ const Register = (location) => {
       </div>
       <form className="login" onSubmit={registerSubmit}>
         <div className="header1">
-          <h1>KOMARS</h1>
+          <h1>KUMARS</h1>
         </div>
         <div className="header2">
-          <h2>Welcome to Komars</h2>
+          <h2>Welcome to KUMARS</h2>
         </div>
         <div className="login-container">
           <div>

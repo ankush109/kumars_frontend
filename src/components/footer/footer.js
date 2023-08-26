@@ -8,9 +8,9 @@ function Footer() {
   return (
 
 <div className='leftfooter'>
-<h1>KOMARS</h1>
+<h1>KUMARS</h1>
 
-<p>&copy; 2023 KOMARS. All rights reserved.</p>
+<p>&copy; 2023 KUMARS. All rights reserved.</p>
 
 </div>
 

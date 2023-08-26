@@ -4,6 +4,7 @@ import "./header.css";
 import MenuIcon from '@mui/icons-material/Menu';
 import Search from "./Search";
 import { useSelector } from "react-redux";
+import favicon from "./favicon.png"
 function Header() {
   const [click, setClick] = useState(false);
 const {user,isAuthenticated}=useSelector((state)=>state.user)
@@ -16,13 +17,26 @@ const {user,isAuthenticated}=useSelector((state)=>state.user)
       <nav className="navbar">
         <div className="nav-container">
          <Link to="/" className="nav-logo">
-         <h1  style={{
+         <div>
+         <img src={favicon} style={
+            {
+              width:"50px",
+              height:"50px",
+              borderRadius:"50%",
+       
+
+            }
+          } />
+         </div>
+    <div>
+    <h1  style={{
             textDecoration: "none",
-            paddingLeft:"50px",
+          
           }}exact to="/" className="nav-logo">
-           KOMARS
+          Kumars
             <i className="fas fa-code"></i>
           </h1>
+    </div>
           </Link>
           <div className="p">
             {
